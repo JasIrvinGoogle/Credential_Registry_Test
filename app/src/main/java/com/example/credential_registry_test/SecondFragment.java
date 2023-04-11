@@ -30,10 +30,22 @@ public class SecondFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
+
+
         View txtview = inflater.inflate(R.layout.fragment_second, container, false);
 
         binding = FragmentSecondBinding.inflate(inflater, container, false);
-        autoCompleteTextView = findViewById(R.id.auto_complete_txt);
+
+
+        return binding.getRoot();
+
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        autoCompleteTextView = getView().findViewById(R.id.auto_complete_txt);
+
         adapterItems = new ArrayAdapter<String>(getActivity() , R.layout.list_item,item);
         autoCompleteTextView.setAdapter(adapterItems);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -44,17 +56,6 @@ public class SecondFragment extends Fragment {
                 Toast.makeText(getActivity(), "Item: " + item, Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-        return binding.getRoot();
-
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
 
         //Back button
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {

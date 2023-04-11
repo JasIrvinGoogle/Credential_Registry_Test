@@ -24,12 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-//    String[] item = {"mDoc", "something1", "something2"};
-//
-//
-//    AutoCompleteTextView autoCompleteTextView;
-//
-//    ArrayAdapter<String> adapterItems;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +40,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
 
-//        autoCompleteTextView = findViewById(R.id.auto_complete_txt);
-
-
-//        binding.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
 
     @Override
