@@ -45,27 +45,27 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:layout_constraintVertical_bias="0.968" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:background="@color/transparent"
-        android:ems="10"
-        android:gravity="top"
-        android:windowSoftInputMode="adjustPan"
-        android:isScrollContainer = "false"
-        android:hint="Registered Credential Attributes"
-        android:inputType="textMultiLine"
-        android:lines="16"
-        android:overScrollMode="always"
-        android:scrollbarStyle="insideInset"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        app:layout_constraintVertical_bias="0.801" />
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/editTextTextPersonName"-->
+<!--        android:layout_width="320dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/transparent"-->
+<!--        android:ems="10"-->
+<!--        android:gravity="top"-->
+<!--        android:windowSoftInputMode="adjustPan"-->
+<!--        android:isScrollContainer = "false"-->
+<!--        android:hint="Registered Credential Attributes"-->
+<!--        android:inputType="textMultiLine"-->
+<!--        android:lines="16"-->
+<!--        android:overScrollMode="always"-->
+<!--        android:scrollbarStyle="insideInset"-->
+<!--        android:scrollbars="vertical"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/button_second"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.505"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"-->
+<!--        app:layout_constraintVertical_bias="0.801" />-->
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -80,23 +80,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="320dp"
-        android:layout_height="62dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Registered Credential Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTextPersonName2"-->
+<!--        android:layout_width="320dp"-->
+<!--        android:layout_height="62dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:text="Registered Credential Name"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"-->
+
+
+<!--        />-->
+
+
+    <RelativeLayout
+        android:id="@+id/idRLContainer"
+        android:layout_width="416dp"
+        android:layout_height="347dp"
+        android:orientation="vertical"
+        android:isScrollContainer = "false"
+
+        app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        tools:context=".MainActivity">
 
+        <!--on below line we are creating edit text
+             for adding a new item to list-->
+        <EditText
+            android:id="@+id/idEdtItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:isScrollContainer = "false"
 
-        />
+            android:layout_toLeftOf="@id/idBtnAdd"
+            android:hint="Enter item name to add in ist" />
 
+        <!--button for adding item from edit text to list-->
+        <Button
+            android:id="@+id/idBtnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="4dp"
+            android:text="Add"
+            android:textAllCaps="false" />
 
+        <!--list view to display list of languages-->
+        <ListView
+            android:id="@+id/idLVLanguages"
+            android:isScrollContainer = "false"
 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/idEdtItemName"
+            android:layout_marginTop="7dp" />
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,10 @@ import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -44,9 +48,59 @@ public class SecondFragment extends Fragment {
         return binding.getRoot();
 
     }
-
+    private ListView languageLV;
+    private Button addBtn;
+    private EditText itemEdt;
+    private ArrayList<String> lngList;
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+        // on below line we are initializing our variables.
+        languageLV = view.findViewById(R.id.idLVLanguages);
+        addBtn = view.findViewById(R.id.idBtnAdd);
+        itemEdt = view.findViewById(R.id.idEdtItemName);
+        lngList = new ArrayList<>();
+        // on below line we are adding items to our list
+        lngList.add("C++");
+        lngList.add("Python");
+
+        // on the below line we are initializing the adapter for our list view.
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, lngList);
+
+        // on below line we are setting adapter for our list view.
+        languageLV.setAdapter(adapter);
+
+        // on below line we are adding click listener for our button.
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // on below line we are getting text from edit text
+                String item = itemEdt.getText().toString();
+
+                // on below line we are checking if item is not empty
+                if (!item.isEmpty()) {
+
+                    // on below line we are adding item to our list.
+                    lngList.add(item);
+
+                    // on below line we are notifying adapter
+                    // that data in list is updated to
+                    // update our list view.
+                    adapter.notifyDataSetChanged();
+                }
+
+            }
+        });
+
+
+
+
+
+
+
+
+
 
         autoCompleteTextView = getView().findViewById(R.id.auto_complete_txt);
 
@@ -62,6 +116,9 @@ public class SecondFragment extends Fragment {
         });
 
         //Back button
+
+        Button buttonSecond = view.findViewById(R.id.button_second);
+
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
