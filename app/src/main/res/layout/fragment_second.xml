@@ -16,14 +16,16 @@
     <!--        app:layout_constraintStart_toStartOf="parent"-->
     <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:hint="@string/select"
-        tools:layout_editor_absoluteX="-10dp"
-        tools:layout_editor_absoluteY="125dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="99dp">
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete_txt"
@@ -32,7 +34,6 @@
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <Button
         android:id="@+id/button_second"
         android:layout_width="wrap_content"
@@ -40,38 +41,62 @@
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="0.839" />
+        app:layout_constraintVertical_bias="0.968" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="323dp"
-        android:layout_height="61dp"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Registered Credential Attributes"
+        android:gravity="top"
+        android:windowSoftInputMode="adjustPan"
+        android:isScrollContainer = "false"
+        android:hint="Registered Credential Attributes"
+        android:inputType="textMultiLine"
+        android:lines="16"
+        android:overScrollMode="always"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        app:layout_constraintVertical_bias="0.104" />
+        app:layout_constraintVertical_bias="0.801" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
         android:layout_width="320dp"
         android:layout_height="62dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Registered Credential Name"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Registered Credential Name"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+
+
+        />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
