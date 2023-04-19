@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.lifecycle.ViewModelProvider;
 import java.util.ArrayList;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,7 +33,13 @@ public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
 
+    private SharedViewModel viewModel;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+    }
 
 
     @Override
