@@ -139,7 +139,7 @@ public class SecondFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
 
-                Toast.makeText(getActivity(), "Item: " + item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Type Selected: " + item, Toast.LENGTH_SHORT).show();
             }
         });
 
