@@ -16,7 +16,6 @@
     <!--        app:layout_constraintStart_toStartOf="parent"-->
     <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
@@ -66,21 +65,7 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"-->
 <!--        app:layout_constraintVertical_bias="0.801" />-->
-
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="320dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Registered Credential Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-
-<!--    <EditText-->
+    <!--    <EditText-->
 <!--        android:id="@+id/editTextTextPersonName2"-->
 <!--        android:layout_width="320dp"-->
 <!--        android:layout_height="62dp"-->
@@ -91,28 +76,38 @@
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"-->
-
-
 <!--        />-->
-
+    <EditText
+        android:id="@+id/registeredCredName"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Registered Credential Name"
+        app:layout_constraintBottom_toTopOf="@+id/button_second"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
     <RelativeLayout
         android:id="@+id/idRLContainer"
-        android:layout_width="416dp"
+        android:layout_width="320dp"
         android:layout_height="347dp"
         android:orientation="vertical"
-        android:isScrollContainer = "false"
 
         app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/registeredCredName"
         tools:context=".MainActivity">
 
         <!--on below line we are creating edit text
              for adding a new item to list-->
         <EditText
-            android:id="@+id/idEdtItemName"
+            android:id="@+id/listAttributes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -121,7 +116,7 @@
             android:isScrollContainer = "false"
 
             android:layout_toLeftOf="@id/idBtnAdd"
-            android:hint="Enter item name to add in ist" />
+            android:hint="List Attributes" />
 
         <!--button for adding item from edit text to list-->
         <Button
@@ -129,7 +124,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_margin="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
             android:text="Add"
             android:textAllCaps="false" />
 
@@ -137,10 +135,10 @@
         <ListView
             android:id="@+id/idLVLanguages"
             android:isScrollContainer = "false"
-
+            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/idEdtItemName"
+            android:layout_below="@id/listAttributes"
             android:layout_marginTop="7dp" />
 
     </RelativeLayout>
